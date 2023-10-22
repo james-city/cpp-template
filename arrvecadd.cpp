@@ -1,8 +1,9 @@
 #include <iostream>
 #include <vector>
 
-template<typename T>
-T matadd(T m1, T m2) {
+template<typename T, typename U>
+T matadd(T m1, U m2) {
+  // Can control return type using constexpr if to copy construct sum based on the type?
   const auto cols = m1.size();
   const auto rows = m1[0].size();
 
@@ -29,24 +30,23 @@ void print(const T& mat) {
 }
 
 int main() {
-  // print(std::vector<std::vector<int>>({{1, 2}, {3, 4}}));
   print(
     matadd(
       std::vector<std::vector<int>>({{1, 2}, {3, 4}}),
-      std::vector<std::vector<int>>({{1, 2}, {3, 4}})
+      std::array<std::array<int, 2>, 2>({
+        std::array<int, 2>({1, 2}),
+        std::array<int, 2>({3, 4})
+      })
     )
   );
 
   print(
     matadd(
       std::array<std::array<int, 2>, 2>({
-        std::array<int, 2>({1, 2}), 
-        std::array<int, 2>({3, 4})
-      }),
-      std::array<std::array<int, 2>, 2>({
         std::array<int, 2>({1, 2}),
         std::array<int, 2>({3, 4})
-      })
+      }),
+      std::vector<std::vector<int>>({{1, 2}, {3, 4}})
     )
   );
 }
