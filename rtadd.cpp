@@ -1,4 +1,4 @@
-// matadd.cpp except it lets you pick the return type of the addition
+// generic matrix addition that lets you pick the return type of the result
 #include <iostream>
 #include <type_traits>
 #include <vector>
