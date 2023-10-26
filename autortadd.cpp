@@ -5,7 +5,7 @@
 #include <vector>
 
 template<typename RT, typename T, typename U>
-RT matadd(T m1, U m2) {
+RT matadd(const T& m1, const U& m2) {
   RT sum;
   // Copy sum from the right source so the types match up.
   if constexpr(std::is_same_v<RT, T>) {

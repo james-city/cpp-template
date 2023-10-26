@@ -2,7 +2,7 @@
 #include <vector>
 
 template<typename T, typename U>
-T matadd(T m1, U m2) {
+T matadd(const T& m1, const U& m2) {
   // Can control return type using constexpr if to copy construct sum based on the type?
   const auto cols = m1.size();
   const auto rows = m1[0].size();

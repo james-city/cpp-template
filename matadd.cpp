@@ -2,7 +2,7 @@
 #include <vector>
 
 template<typename T>
-T matadd(T m1, T m2) {
+T matadd(const T& m1, const T& m2) {
   const auto cols = m1.size();
   const auto rows = m1[0].size();
 
