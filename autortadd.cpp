@@ -30,8 +30,8 @@ RT matadd(const T& m1, const U& m2) {
 }
 
 template <typename T>
-T matadd(T m1, T m2) {
-  return matadd<T>(m1, m2);
+T matadd(const T& m1, const T& m2) {
+  return matadd<T, T, T>(m1, m2);
 }
 
 template<typename T>
