@@ -29,7 +29,6 @@ void print(const T& mat) {
 }
 
 int main() {
-  // print(std::vector<std::vector<int>>({{1, 2}, {3, 4}}));
   print(
     matadd(
       std::vector<std::vector<int>>({{1, 2}, {3, 4}}),
